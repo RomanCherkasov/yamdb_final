@@ -2,12 +2,12 @@ from django.db.models import Count, Sum
 from django.shortcuts import get_object_or_404
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import filters, mixins, viewsets
-from reviews.models import Categories, Genres, Review, Title
 
 from api.permissions import FullAcessOrReadOnlyPermission, IsAdminOrReadOnly
 from api.serializers import (CategoriesSerializer, CommentSerializer,
                              GenresSerializer, ReviewSerializer,
                              TitlesSerializer, TitlesWriteSerializer)
+from reviews.models import Categories, Genres, Review, Title
 
 from .filters import TitleFilter
 
