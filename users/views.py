@@ -66,8 +66,7 @@ class UserViewSet(viewsets.ModelViewSet):
 
     def get_object(self):
         username = self.kwargs.get('pk')
-        user = get_object_or_404(User, username=username)
-        return user
+        return get_object_or_404(User, username=username)
 
     @action(detail=False, permission_classes=(IsAuthenticated,),
             methods=['patch', 'get'])
@@ -85,3 +84,4 @@ class UserViewSet(viewsets.ModelViewSet):
             serializer.is_valid(raise_exception=True)
             serializer.save(role=user.role, partial=True)
             return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response(status=status.HTTP_400_BAD_REQUEST)
