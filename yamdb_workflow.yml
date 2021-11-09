@@ -26,8 +26,6 @@ jobs:
       run: |
         # запуск проверки проекта по flake8
         python -m flake8
-        cd infra_project/
-        python manage.py test
         python -m pytest
 
   build_and_push_to_docker_hub:
