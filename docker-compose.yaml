@@ -14,11 +14,11 @@ services:
     env_file:
       - ./.env
   web:
+    image: romancherkasov/yam_db_final:latest
+    restart: always
     volumes:
       - static_value:/code/static/
       - media_value:/code/media/
-    image: romancherkasov/yam_db_final:latest
-    restart: always
     depends_on:
       - db
     env_file:
@@ -35,3 +35,7 @@ services:
       - media_value:/var/html/media/
     depends_on:
       - web
+volumes:
+  postgres_data:
+  static_value:
+  media_value:
