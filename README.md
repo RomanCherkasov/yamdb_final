@@ -38,4 +38,5 @@ docker-compose exec web python manage.py collectstatic --no-input
 ``` bash
 docker-compose exec web python manage.py loaddata <fixturename>.json
 ```
+
 http://51.250.23.154/
