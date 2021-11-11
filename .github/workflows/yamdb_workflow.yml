@@ -63,7 +63,7 @@ jobs:
         script: |
             sudo docker pull ${{ secrets.DOCKER_USERNAME}}/yam_db_final:latest
             sudo docker-compose stop
-            sudo docker-compose rm web -f
+            sudo docker-compose rm web
             # Создаст файл для переменных окружения
             rm .env
             touch .env 
