@@ -61,7 +61,7 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         passphrase: ${{ secrets.PASSPHRASE }}
         script: |
-            sudo docker pull {{ secrets.DOCKER_USERNAME}}/yam_db_final:latest
+            sudo docker pull ${{ secrets.DOCKER_USERNAME}}/yam_db_final:latest
             sudo docker-compose stop
             sudo docker-compose rm web
             # Создаст файл для переменных окружения
